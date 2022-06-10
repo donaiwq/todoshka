@@ -1,0 +1,31 @@
+.todolist {
+  width: 100%;
+  flex: 0 1 auto;
+  overflow-y: scroll;
+  margin-top: 2rem;
+
+  &::-webkit-scrollbar {
+    background-color: #fff;
+    width: 3px;
+  }
+
+
+  ul {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    column-gap: 0.5rem;
+  }
+
+
+}
+@media(max-width:395px){
+  ul{
+    width: 180px;
+    display: flex;
+    align-items: center;
+    font-size: 12px;
+    justify-content: center;
+  }
+}

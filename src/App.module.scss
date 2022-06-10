@@ -1,0 +1,156 @@
+.app {
+  height: 100vh;
+
+  background-color: black;
+  position: relative;
+
+  z-index: 10;
+
+  &Container {
+    position: relative;
+    z-index: 10;
+    width: 70%;
+    max-height: 90%;
+    flex: 0 1 auto;
+    display: flex;
+    flex-direction: column;
+    margin: 0 auto;
+  }
+
+  .title {
+    font-size: 110px;
+    margin-bottom: 20px;
+    font-family: 'Sacramento';
+    padding: 5px;
+    color: #fff;
+    text-align: center;
+    background-image: url('./components/icons/heart.jpg');
+    color: transparent;
+    -webkit-background-clip: text;
+    animation: title 10s infinite ease-in-out;
+
+  }
+
+  @keyframes title {
+    from {
+      background-position: 8 10;
+    }
+
+    to {
+      background-position: 100% 100%;
+    }
+  }
+
+  .hearts {
+
+    background-color: white;
+  }
+
+  .searchnav {
+    display: flex;
+    column-gap: 1.7rem;
+    color: purple;
+    position: relative;
+
+  }
+
+  .btnka {
+    min-width: 150px;
+  }
+
+  .inputsearch {
+    &>div:hover {
+      fieldset {
+
+        border: 2px solid rgb(117, 32, 166);
+        color: rgb(117, 32, 166);
+      }
+    }
+
+    & input {
+      color: white;
+    }
+
+    & fieldset {
+      border: 1px solid rgb(117, 32, 166);
+      color: rgb(117, 32, 166);
+    }
+  }
+
+
+
+
+
+  .select {
+    min-width: 150px;
+    text-transform: capitalize;
+    border: 1px solid rgb(117, 32, 166);
+    color: rgb(117, 32, 166);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  }
+
+}
+
+@media(max-width:395px) {
+  .container {
+    max-width: 350px;
+  }
+
+  .app {
+
+    .title {
+      font-size: 43px;
+    }
+
+    .btnka {
+      width: 20px;
+      height: 27px;
+    }
+
+    .searchnav {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      row-gap: 8px;
+      margin: 0 auto;
+
+      .inputsearch {
+        font-size: 10px;
+        width: 150px;
+        padding: 0;
+        height: 27px;
+
+        &>div:hover {
+          fieldset {
+
+            border: 2px solid rgb(117, 32, 166);
+            color: rgb(117, 32, 166);
+            background-color: white;
+          }
+        }
+
+        & input {
+          color: rgb(236, 52, 236);
+          padding: 5px;
+        }
+
+        & fieldset {
+          border: 1px solid rgb(117, 32, 166);
+          color: rgb(117, 32, 166);
+        }
+      }
+
+      .select {
+        width: 150px;
+        height: 27px;
+        margin-top: 5px;
+
+      }
+    }
+
+  }
+
+
+
+
+}

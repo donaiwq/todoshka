@@ -1,0 +1,27 @@
+.root {
+  position: fixed;
+  top: -10vh;
+  left: -10vw;
+  width: 120vw;
+  height: 120vh;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+
+}
+
+
+.heartwow {
+  color: rgba(128, 0, 128, 0.3);
+  transition: color 1.2s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  // transform: rotate(10deg);
+  &:hover {
+    color: #800080;
+    transition: 0s;
+
+  }
+}
