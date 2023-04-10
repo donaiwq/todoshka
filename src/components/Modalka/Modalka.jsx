@@ -6,7 +6,6 @@ export const Modalka = ({
   setIsModalOpen,
   setTodos,
   todos,
-
   type,
   curent,
 }) => {
@@ -23,7 +22,7 @@ export const Modalka = ({
             id: new Date().getTime(),
             date: new Date().toLocaleString('ru-ru'),
             completed: false,
-            favorite: false,
+            favorited: false,
           },
         ])
         break
@@ -33,9 +32,9 @@ export const Modalka = ({
             todo.id === curent.id ? { ...todo, todoName } : todo
           )
         )
-        break
-      default:
-        break
+      //   break
+      // default:
+      //   break
     }
 
     setIsModalOpen('')

@@ -4,18 +4,22 @@ import s from './App.module.scss'
 import { Modalka } from './components/Modalka/Modalka'
 import { Todolist } from './components/Todolist/Todolist'
 import { Background } from './components/Background/Background'
+
 const App = () => {
+
+
   const [searchName, setSearchName] = useState('')
   const [todos, setTodos] = useState([])
   const [isModalOpen, setIsModalOpen] = useState('')
   const [filter, setFilter] = useState('all')
   const [curent, setCurent] = useState({})
   const filterHandle = (e) => {
+
     setFilter(e.target.value)
   }
   useEffect(() => {
     const todosFromLC = JSON.parse(localStorage.getItem('todos')) || []
-    console.log(todosFromLC)
+    // console.log(todosFromLC)
     setTodos(todosFromLC)
   }, [])
 
@@ -23,21 +27,28 @@ const App = () => {
     localStorage.setItem('todos', JSON.stringify(todos))
   }, [todos])
 
-  // localStorage.setItem('todos', JSON.stringify(todos))
-
-  // console.log(JSON.parse(localStorage.getItem('todos')))
+  
 
   return (
     <div className={s.app}>
       <Background />
       <div className={s.appContainer}>
+
         <h1 className={s.title}>Start Now</h1>
+        
         <div className={s.searchnav}>
+
+
           <Button
+            
             color='secondary'
+
             variant='outlined'
+
             onClick={() => setIsModalOpen('new')}
+
             className={s.btnka}
+
           >
             Add new todo
           </Button>

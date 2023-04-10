@@ -20,8 +20,10 @@ export const Todolist = ({
                 return todo
               case 'completed':
                 return todo.completed
-              case 'favorite':
-                return todo.favorite
+              case 'favorited':
+                return todo.favorited
+              case 'filtered':
+              return todo.filtered
             }
           })
           .filter((todo) =>
@@ -34,6 +36,7 @@ export const Todolist = ({
                 todos={todos}
                 setCurent={setCurent}
                 setTodos={setTodos}
+                filter={filter}
                 setIsModalOpen={setIsModalOpen}
                 {...todo}
               />

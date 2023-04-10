@@ -38,7 +38,7 @@
       ;
 
       & input {
-        color: white;
+        color: purple;
       }
     }
   }
@@ -61,17 +61,21 @@
     filter: hue-rotate(360deg);
   }
 }
-@media(max-width:395px){
-  .root{
-    .modal{
+
+@media(max-width:395px) {
+  .root {
+    .modal {
       width: 270px;
-      &shine{
-width: 267px;
+
+      &shine {
+        width: 267px;
       }
-      h3{
+
+      h3 {
         text-align: center;
       }
-      .btns{
+
+      .btns {
         display: flex;
         justify-content: center;
       }

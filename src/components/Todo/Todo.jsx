@@ -12,12 +12,13 @@ export const Todo = ({
   id,
   date,
   completed,
-  favorite,
+  favorited,
   todoName,
   todos,
   setTodos,
   setIsModalOpen,
   setCurent,
+  filtered
 }) => {
   const onComplete = () => {
     setTodos(
@@ -33,14 +34,27 @@ export const Todo = ({
       })
     )
   }
-
+  const onFilter = () => {
+    setTodos(
+      todos.map((todo) => {
+        if (todo.id === id) {
+          return {
+            ...todo,
+            filtered: !todo.filtered,
+          }
+        } else {
+          return todo
+        }
+      })
+    )
+}
   const onFavorite = () => {
     setTodos(
       todos.map((todo) => {
         if (todo.id === id) {
           return {
             ...todo,
-            favorite: !todo.favorite,
+            favorited: !todo.favorited,
           }
         } else {
           return todo
@@ -54,7 +68,7 @@ export const Todo = ({
   }
   const onEdit = () => {
     setIsModalOpen('edit')
-    setCurent({todoName,id})
+    setCurent({ todoName, id })
   }
   return (
     <li className={s.root}>
@@ -64,27 +78,27 @@ export const Todo = ({
         onChange={onComplete}
         checked={completed}
         color='secondary'
-
       />
       <Checkbox
         icon={<BsSuitHeart fontSize={20} />}
         checkedIcon={<BsSuitHeartFill fontSize={20} />}
         color='secondary'
         onChange={onFavorite}
-        checked={favorite}
-        className={s.favorite}
+        checked={favorited}
+        // className={s.favorited}
       />
       <div className={s.title}>
         <Typography
-          className={`${completed ? s.completed : ''} ${
-            favorite ? s.favorite : ''
+          className={`${completed ? s.completed : ''} 
+          ${
+            favorited ? s.favorited : ''
           }`}
           variant='h3'
           fontSize='1.5rem'
         >
           {todoName}
         </Typography>
-        <p className={s.data} >{date}</p>
+        <p className={s.data}>{date}</p>
       </div>
       <IconButton color='secondary' onClick={onEdit}>
         <BsPencilSquare fontSize={20} />
